@@ -80,3 +80,12 @@
     align-items: center;
     margin-right: 40px;
 }
+
+.cardParent{
+    display: flex;
+    width: 96%;
+    margin-left: 2%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}

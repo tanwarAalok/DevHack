@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/Explore.module.css";
 import Avatar from "public/profile2.png";
 import Image from "next/image";
+import WorkerCard from "@/components/WorkerCard";
 
 const Constructers = () => {
   const [data, setData] = useState(null);
@@ -35,29 +36,13 @@ const Constructers = () => {
           </div>
         </div>
 
-        {filterData?.map((worker) => (
-          <>
-            <div className={styles.explore_card}>
-              <div className={styles.card_content}>
-                <div className={styles.image_rating}>
-                  <Image src={Avatar} alt="image" width="100" height="100" />
-                  <p>4 Stars | 500+ Reviews</p>
-                </div>
-                <div className={styles.name_desc}>
-                  <h3>{worker.name}</h3>
-                  <h5>5+ years of Experience</h5>
-                  <p>
-                    Lorem ipsydn dandnans ookdlam xld ad a dadnoawd ad adoawd
-                    oawdoahwdn awudhawduaiudw.{" "}
-                  </p>
-                </div>
-              </div>
-              <div className={styles.btn_cont}>
-                <button className={styles.green_btn}>Book now</button>
-              </div>
-            </div>
-          </>
-        ))}
+        <div className={styles.cardParent}>
+          {filterData?.map((worker) => (
+            <>
+              <WorkerCard worker={worker} />
+            </>
+          ))}
+        </div>
       </div>
     </>
   );
