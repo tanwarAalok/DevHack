@@ -1,0 +1,19 @@
+.navbar_comp{
+    height: 60px;
+    width: 100vw;
+    background-color: #009D6A;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+.navbar_link_cont{
+    width: 10vw;
+    margin-left: 85vw;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar_comp a{
+    align-self: flex-end;
+}

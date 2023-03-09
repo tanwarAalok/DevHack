@@ -1,0 +1,72 @@
+.main_page{
+  height: calc(100vh - 60px);
+  background-image: url("/frontImg.png");
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main_page_cover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(70, 67, 67, 0.467);
+}
+
+.mainpage_parent{
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  z-index: 1;
+}
+
+.authSection{
+  width: 517px;
+  height: 532px;
+  background: rgba(244, 240, 240, 0.78);
+  box-shadow: 3px 3px 9px 6px rgba(0, 0, 0, 0.11);
+  border-radius: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5% 0px;
+}
+
+.authSection img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.authSection a{
+  width: 55%;
+}
+
+.authSection button{
+  background-color: #009D6A;
+  color: white;
+  padding: 15px 20px;
+  width: 100%;
+  border: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user_btn{
+  background-color: white !important;
+  color: #009D6A !important;
+}
+
+.quotes_section{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 84px;
+  color: white;
+  width: 617px;
+}

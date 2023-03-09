@@ -1,0 +1,43 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+}
+
+.form img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+.flex_cont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.lable_input{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.lable_input input, .lable_input select{
+    padding: 10px;
+}
+.lable_input label{
+    color: #009D6A;
+}
+
+.form button{
+    margin-top: 80px;
+    background: #009D6A;
+    color: white;
+    padding: 15px 50px;
+    border: 0;
+    cursor: pointer;
+}

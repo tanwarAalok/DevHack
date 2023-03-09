@@ -1,0 +1,61 @@
+.landing_p1{
+    height: calc(100vh - 60px);
+    background-image: url("/workers.png");
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing_cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.landing_p1 h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 84px;
+    text-align: center;
+    color: #FFFFFF;
+    z-index: 1;
+    text-shadow: 13px 11px 9px rgba(0, 0, 0, 0.65);
+}
+
+.landing_p2{
+    height: 80vh;
+    width: 100vw;
+}
+
+.cat_cont{
+    display: flex;
+    width: 90%;
+    margin: 80px 5%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.cat_card{
+    display: flex;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cat_card img{
+    width: 100%;
+    height: 85%;
+}
+.cat_card h3{
+    color: #009D6A;
+}
