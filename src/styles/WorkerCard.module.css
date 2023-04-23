@@ -1,26 +1,24 @@
 
 .explore_card{
-    width: 437px;
+    width: 400px;
     height: 422px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5px;
-    background: #D9D9D9;
+    background: #d9d9d951;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 67px;
     margin: 20px;
 }
-
 
 .image_rating{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    height: 45%;
     width: 100%;
-    padding-bottom: 20px;
 }
 
 .card_desc{
@@ -28,17 +26,33 @@
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    width: 80%;
 }
 .card_desc > h3{
     font-weight: 700;
     font-size: 28px;
     line-height: 54px;
 }
-.card_desc p{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+
+.workerData{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
 }
+
+.workerData div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.workerData h5{
+    font-size: 18px;
+    font-weight: 500;
+}
+
 
 .btn_cont{
     display: flex;
@@ -57,4 +71,7 @@
     font-size: 16px;
     cursor: pointer;
     margin-top: 40px;
+    width: 75%;
+    border-radius: 16px;
 }
+

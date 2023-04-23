@@ -42,6 +42,7 @@
   line-height: 62px;
 }
 
+
 .authSection > input{
   background: #FFFFFF;
   border: 1.5px solid #009D6A;
@@ -51,7 +52,8 @@
   line-height: 30px;
   color: #009D6A;
   opacity: 0.42;
-  padding: 8px 10px;
+  padding: 12px 28px;
+  width: 50%;
 
 }
 
@@ -65,12 +67,12 @@
   background-color: #009D6A;
   color: white;
   padding: 12px 28px;
-  width: 50%;
   border: 0;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
+  width: 50%;
 }
 
 .authSection > a > p {
