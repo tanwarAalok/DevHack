@@ -5,15 +5,31 @@
     display: flex;
     color: white;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
+.navbar_comp h2{
+    font-size: 32px;
+}
+
 .navbar_link_cont{
-    width: 10vw;
-    margin-left: 85vw;
-    margin-right: 5vw;
+    width: 15vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
+
+
+.navbar_link_cont svg{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
 .navbar_comp a{
     align-self: flex-end;
 }

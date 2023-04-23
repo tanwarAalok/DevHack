@@ -1,14 +1,14 @@
 
 .explore_card{
     width: 400px;
-    height: 422px;
+    height: 430px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5px;
     background: #d9d9d951;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 67px;
+    border-radius: 37px;
     margin: 20px;
 }
 
@@ -70,8 +70,8 @@
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 75%;
-    border-radius: 16px;
+    border-radius: 10px;
 }
 

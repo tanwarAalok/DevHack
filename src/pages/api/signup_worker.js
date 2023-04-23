@@ -1,4 +1,4 @@
-const connectDatabase = require("../../db");
+const connectDatabase = require("../../utils/db");
 import NextCors from "nextjs-cors";
 const Worker = require("../../models/workerModel");
 

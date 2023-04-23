@@ -1,10 +1,9 @@
-const connectDatabase = require("../../db");
+const connectDatabase = require("../../utils/db");
 import NextCors from "nextjs-cors";
 const User = require("../../models/userModel");
 const jwt = require("jsonwebtoken");
 
 export default async function handler(req, res) {
-
   await NextCors(req, res, {
     // Options
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
@@ -26,11 +25,10 @@ export default async function handler(req, res) {
 
         // Compare the hashed password with the provided password
         if (password != user.password)
-              return res.status(400).send("Invalid phone number or password");
-        
-        const token = jwt.sign({ _id: user._id }, "abcd12345");
-        res.setHeader("auth-token", token).send(token);  
+          return res.status(400).send("Invalid phone number or password");
 
+        const token = jwt.sign({ _id: user._id }, "abcd12345");
+        res.setHeader("auth-token", token).send(token);
       } catch (err) {
         res.status(400).json({ success: false, error: err.message });
       }

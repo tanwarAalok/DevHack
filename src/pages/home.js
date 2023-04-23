@@ -17,7 +17,7 @@ const LandingPage = () => {
           {" "}
           We got all type <br />
           of
-          <br /> worker you need.
+          <br /> workers you need.
         </h1>
       </div>
 
@@ -25,24 +25,24 @@ const LandingPage = () => {
         <div className={styles.cat_cont}>
           <div
             className={styles.cat_card}
-            onClick={() => Router.push("/plumbers")}
+            onClick={() => Router.push("workers/plumber")}
           >
             <Image src={Cat1} alt="card image" />
             <h3>Plumber</h3>
           </div>
           <div
             className={styles.cat_card}
-            onClick={() => Router.push("/electricians")}
+            onClick={() => Router.push("workers/electrician")}
           >
             <Image src={Cat2} alt="card image" />
             <h3>Electricians</h3>
           </div>
           <div
             className={styles.cat_card}
-            onClick={() => Router.push("/construction_workers")}
+            onClick={() => Router.push("workers/labourer")}
           >
             <Image src={Cat3} alt="card image" />
-            <h3>Construction workers</h3>
+            <h3>Labourers</h3>
           </div>
         </div>
       </div>

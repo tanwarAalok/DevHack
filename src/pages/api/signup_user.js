@@ -1,4 +1,4 @@
-const connectDatabase = require("../../db");
+const connectDatabase = require("../../utils/db");
 import NextCors from "nextjs-cors";
 const User = require("../../models/userModel");
 
@@ -14,13 +14,13 @@ export default async function handler(req, res) {
   connectDatabase();
 
   // *********************************************************************
-    const { number } = req.body;
+  const { number } = req.body;
   switch (req.method) {
     case "POST":
       try {
         const user = await User.findOne({ number });
         if (user) return res.status(400).send("User already exists");
-        
+
         const userDetails = await User.create(req.body);
         res.status(201).json({ success: true, user: userDetails });
       } catch (err) {

@@ -1,9 +1,11 @@
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "@/styles/WorkerCard.module.css"
 import Avatar from "public/profile2.png";
+import WorkerBooked from './WorkerBookModal';
 
-const WorkerCard = ({worker}) => {
+const WorkerCard = ({ worker }) => {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className={styles.explore_card}>
       <div className={styles.image_rating}>
@@ -26,7 +28,10 @@ const WorkerCard = ({worker}) => {
           </div>
         </div>
       </div>
-      <button className={styles.green_btn}>Book now</button>
+      <button onClick={() => setModalShow(true)} className={styles.green_btn}>
+        Book now
+      </button>
+      <WorkerBooked show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 }
