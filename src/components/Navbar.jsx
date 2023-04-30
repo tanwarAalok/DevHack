@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "@/styles/Navbar.module.css";
 import Link from 'next/link';
 import { Router } from 'next/router';
@@ -9,12 +9,18 @@ function CgProfile(props) {
 
 
 const Navbar = () => {
+  const [authToken, setAuthToken] = useState(null);
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    if (token) setAuthToken(token);
+  }, [])
+  
   return (
     <div className={styles.navbar_comp}>
       <h2>
         <Link href={"/home"}>JanSeva</Link>
       </h2>
-      {sessionStorage.getItem("token") ? (
+      { authToken !== null ? (
         <div className={styles.navbar_link_cont}>
           <div>
             <Link href={"/"} onClick={() => sessionStorage.removeItem("token")}>
