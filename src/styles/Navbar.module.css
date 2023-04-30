@@ -17,9 +17,9 @@
 }
 
 .navbar_link_cont{
-    width: 15vw;
+    width: 10vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 

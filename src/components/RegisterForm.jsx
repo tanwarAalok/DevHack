@@ -55,7 +55,7 @@ const RegisterForm = ({ styles }) => {
       const res = await axios.post("/api/register", body, config);
       setLoading(false);
       success = res.data.success;
-        message = res.data.message;
+      message = res.data.message;
       sessionStorage.setItem("token", JSON.stringify(res.data.data));
       router.push("/home");
     } catch (err) {

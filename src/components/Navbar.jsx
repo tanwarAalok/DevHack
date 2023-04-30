@@ -14,15 +14,18 @@ const Navbar = () => {
       <h2>
         <Link href={"/home"}>JanSeva</Link>
       </h2>
-      <div className={styles.navbar_link_cont}>
-        <div>
-          <Link href={"/contact"}>Contact Us</Link>
+      {sessionStorage.getItem("token") ? (
+        <div className={styles.navbar_link_cont}>
+          <div>
+            <Link href={"/"} onClick={() => sessionStorage.removeItem("token")}>
+              Logout
+            </Link>
+          </div>
+          <CgProfile onClick={() => Router.push("/profile")} />
         </div>
-        <div>
-          <Link href={"/faq"}>FAQs</Link>
-        </div>
-        <CgProfile onClick={() => Router.push("/profile")} />
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

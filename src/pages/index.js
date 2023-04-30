@@ -1,17 +1,12 @@
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/Navbar';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import axios from 'axios';
+import LoginForm from '@/components/LoginForm';
 
 export default function Home() {
-
-  const [number, setNumber] = useState("");
-  const [password, setPassword] = useState("");
   const router = useRouter();
-
   useEffect(() => {
     const authToken = sessionStorage.getItem("token");
     if (authToken) {
@@ -19,25 +14,7 @@ export default function Home() {
     }
   }, []);
 
-  const loginSubmit = async (e) => {
-    e.preventDefault();
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
-    const body = JSON.stringify({ number, password });
-
-    try {
-      const res = await axios.post("/api/login", body, config);
-      sessionStorage.setItem("token", res.data.data);
-      router.push("/home");
-    } catch (err) {
-      console.error(err.message);
-      throw err;
-    }
-  }
+  
 
   return (
     <>
@@ -47,21 +24,7 @@ export default function Home() {
         <div className={styles.mainpage_parent}>
           <div className={styles.authSection}>
             <h1>Welcome Back !</h1>
-            <input
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-              required
-              type="number"
-              placeholder="Mobile Number"
-            />
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              type="password"
-              placeholder="Password"
-            />
-            <button onClick={loginSubmit}>Login</button>
+            <LoginForm />
             <Link href={"/register"}>
               <p>First time ? Sign up with us</p>
             </Link>
