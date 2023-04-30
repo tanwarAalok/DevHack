@@ -12,7 +12,9 @@ const WorkerSchema = new mongoose.Schema({
   upi: String,
   photo: String,
   role: { type: String, required: true, enum: ["worker", "user", "admin"] },
-  verified: { type: Boolean, default: false }
+  verified: { type: Boolean, default: false },
+  rating: { type: Number, default: 0 },
+  totalServices: {type: Number, default: 0},
 });
 mongoose.models = {};
 module.exports = mongoose.model("Worker", WorkerSchema);
