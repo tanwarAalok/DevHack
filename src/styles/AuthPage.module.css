@@ -1,6 +1,7 @@
 .auth_main_page{
     height: calc(100vh - 60px);
     display: flex;
+    margin-top: 60px;
 }
 
 .left{
@@ -29,7 +30,7 @@
 .formContainer{
     width: 70%;
     height: 100%;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .formContainer > h1{
@@ -40,7 +41,7 @@
     margin-bottom: 40px;
 }
 
-.form{
+.formContainer > form{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -69,19 +70,20 @@
     display: flex;
     margin-top: 10px;
 }
-.catOption > button{
+.catOption > div{
     border: 1px solid rgba(0, 157, 106, 0.5);
     padding: 8px 15px;
     margin-right: 20px;
     cursor: pointer;
 }
 
+
 .select{
     color: white;
     background: #009D6A;
 }
 
-.form > button{
+.formContainer > form > button{
     background: #009D6A;
     color: white;
     padding: 10px 20px;

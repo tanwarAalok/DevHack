@@ -1,13 +1,22 @@
 import Navbar from '@/components/Navbar'
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "@/styles/Landing.module.css";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import Image from 'next/image';
 import Cat1 from "public/cat1.png"
 import Cat2 from "public/cat2.png"
 import Cat3 from "public/cat3.png"
 
 const LandingPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const authToken = sessionStorage.getItem("token");
+    if (!authToken) {
+      router.push("/");
+    }
+  }, []);
+  
   return (
     <>
       <Navbar />

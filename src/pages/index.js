@@ -12,6 +12,13 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  useEffect(() => {
+    const authToken = sessionStorage.getItem("token");
+    if (authToken) {
+      router.push("/home");
+    }
+  }, []);
+
   const loginSubmit = async (e) => {
     e.preventDefault();
     const config = {
@@ -24,7 +31,7 @@ export default function Home() {
 
     try {
       const res = await axios.post("/api/login", body, config);
-      localStorage.setItem("token", res.data);
+      sessionStorage.setItem("token", res.data.data);
       router.push("/home");
     } catch (err) {
       console.error(err.message);

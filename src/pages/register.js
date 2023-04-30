@@ -1,13 +1,19 @@
-import Navbar from '@/components/Navbar'
-import React, { useState } from 'react'
+import Navbar from "@/components/Navbar";
+import React, { useEffect } from "react";
 import styles from "@/styles/AuthPage.module.css";
-import BgImg from "public/frontImg.png"
-import Image from 'next/image';
-import Avatar from "public/profile.png"
+import Image from "next/image";
+import BgImg from "public/frontImg.png";
+import { useRouter } from "next/router";
+import RegisterForm from "@/components/RegisterForm";
 
 const Register = () => {
-  const [ btnSelect, setBtnselect ] = useState("worker");
-
+  const router = useRouter();
+  useEffect(() => {
+    const authToken = sessionStorage.getItem("token");
+    if (authToken) {
+      router.push("/home");
+    }
+  }, []);
   return (
     <>
       <Navbar />
@@ -15,53 +21,11 @@ const Register = () => {
         <div className={styles.left}>
           <Image src={BgImg} alt="bg-image" />
         </div>
-
-        <div className={styles.right}>
-          <div className={styles.avatarContainer}>
-            <Image src={Avatar} alt="avatar" width="150" height="150" />
-          </div>
-
-          <div className={styles.formContainer}>
-            <h1>Hi, there!</h1>
-            <div className={styles.form}>
-              <div className={styles.labelInput}>
-                <label>Name*</label>
-                <input required />
-              </div>
-              <div className={styles.labelInput}>
-                <label>Mobile Number*</label>
-                <input required />
-              </div>
-              <div className={styles.labelInput}>
-                <label>Password*</label>
-                <input required />
-              </div>
-
-              <div className={styles.labelInput}>
-                <label>Categories*</label>
-                <div className={styles.catOption}>
-                  <button
-                    className={btnSelect === "worker" ? `${styles.select}` : ""}
-                    onClick={() => setBtnselect("worker")}
-                  >
-                    Worker
-                  </button>
-                  <button
-                    className={btnSelect === "user" ? `${styles.select}` : ""}
-                    onClick={() => setBtnselect("user")}
-                  >
-                    User
-                  </button>
-                </div>
-              </div>
-
-              <button>Create Account</button>
-            </div>
-          </div>
-        </div>
+        <RegisterForm styles={styles}/>
+        
       </div>
     </>
   );
-}
+};
 
 export default Register;
