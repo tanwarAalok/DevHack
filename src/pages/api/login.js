@@ -1,7 +1,7 @@
 const connectDatabase = require("../../utils/db");
 import NextCors from "nextjs-cors";
 const User = require("../../models/userModel");
-// const jwt = require("jsonwebtoken");
+const Worker = require("../../models/workerModel");
 
 export default async function handler(req, res) {
   await NextCors(req, res, {
@@ -19,14 +19,16 @@ export default async function handler(req, res) {
   switch (req.method) {
     case "POST":
       try {
-        const user = await User.findOne({ number });
-        if (!user)
+        const data =
+          (await User.findOne({ number })) ||
+          (await Worker.findOne({ number }));
+        if (!data)
           return res
             .status(403)
-            .json({ success: false, message: "User not found !"});;
+            .json({ success: false, message: "User not found !"});
 
         // Compare the hashed password with the provided password
-        if (password != user.password)
+        if (password != data.password)
           return res
             .status(403)
             .json({ success: false, message: "Password does not match !" });;
@@ -34,7 +36,7 @@ export default async function handler(req, res) {
         // const token = jwt.sign({ _id: user._id }, "abcd12345");
         res.status(201).json({
           success: true,
-          data: user,
+          data: data,
           message: "Successfully login !",
         });
       } catch (err) {

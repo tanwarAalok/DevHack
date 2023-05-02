@@ -1,0 +1,66 @@
+.mainPage {
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+  padding: 0 10%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainPage > form {
+  width: 100%;
+  max-width: 900px;
+}
+
+.imgWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.labelInput {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.labelInput label {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #009d6a;
+}
+
+.labelInput input {
+  width: 100%;
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 157, 106, 0.5);
+  color: #009d6bb2;
+}
+
+.labelInput select,
+.lableInput option {
+  width: 100%;
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 157, 106, 0.5);
+  margin-top: 20px;
+  color: #009d6ba8;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.mainPage button{
+    background: #009D6A;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 157, 106, 0.5);
+    margin-top: 10px;
+    width: 100%;
+}

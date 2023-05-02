@@ -31,7 +31,7 @@ export default function Home() {
           </div>
           <div className={styles.quotes_section}>
             All-in-one platform <br /> providing recruiting and outreach
-            services designed <br /> to help unorganized labor
+            services designed <br /> to help unorganized labour
           </div>
         </div>
       </div>

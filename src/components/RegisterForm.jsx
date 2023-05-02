@@ -39,7 +39,6 @@ const RegisterForm = ({ styles }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    let success, message;
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -54,18 +53,16 @@ const RegisterForm = ({ styles }) => {
     try {
       const res = await axios.post("/api/register", body, config);
       setLoading(false);
-      success = res.data.success;
-      message = res.data.message;
       sessionStorage.setItem("token", JSON.stringify(res.data.data));
-      router.push("/home");
+      alert(res.data.message);
+      role === "worker" ? router.push("/profile") : router.push("/home");
     } catch (err) {
       setLoading(false);
-      success = err.response.data.success;
-      message = err.response.data.message;
+      alert(err.response.data.message);
       console.log(err.response.data);
     }
 
-    alert(message);
+    
   };
 
   return (

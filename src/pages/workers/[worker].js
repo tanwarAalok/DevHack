@@ -27,7 +27,7 @@ const Workers = () => {
       });
   }, []);
 
-  const filterData = data.filter((d) => d.category === router.query.worker);
+  const filterData = data.filter((d) => d.verified && d.category === router.query.worker);
 
   return (
     <>

@@ -22,7 +22,7 @@ const LoginForm = () => {
 
     try {
       const res = await axios.post("/api/login", body, config);
-      sessionStorage.setItem("token", res.data.data);
+      sessionStorage.setItem("token", JSON.stringify(res.data.data));
       setLoading(false);
       alert(res.data.message);
       router.push("/home");
