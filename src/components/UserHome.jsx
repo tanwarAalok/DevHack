@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import { Router } from 'next/router'
 import React from 'react'
 import Cat1 from "public/cat1.png";
 import Cat2 from "public/cat2.png";
 import Cat3 from "public/cat3.png";
+import { useRouter } from 'next/router';
 
-const UserHome = ({styles}) => {
+const UserHome = ({ styles }) => {
+  const Router = useRouter();
     return (
       <>
         <div className={styles.landing_p1}>

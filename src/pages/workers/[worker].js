@@ -44,7 +44,7 @@ const Workers = () => {
         <div className={styles.cardParent}>
           {isLoading ? (
             <h3>Loading...</h3>
-          ) : !data || data.length == 0 ? (
+          ) : !filterData || filterData.length == 0 ? (
             <h3>No workers available !!</h3>
           ) : (
             filterData?.map((worker) => (

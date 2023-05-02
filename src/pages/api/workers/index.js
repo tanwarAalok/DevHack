@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const data = await Worker.find({});
-        res.status(400).json({ success: true, workers: data });
+        res.status(200).json({ success: true, workers: data });
       } catch (err) {
         res.status(400).json({ success: false, error: err.message });
       }
