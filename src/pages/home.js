@@ -23,7 +23,7 @@ const LandingPage = () => {
     <>
       <Navbar />
       {role === "worker" ? (
-        <WorkerHome styles={styles} />
+        <WorkerHome />
       ) : (
         <UserHome styles={styles} />
       )}

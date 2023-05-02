@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Avatar from "public/profile.png";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 function FaCamera(props) {
   return (
@@ -186,7 +187,9 @@ const WorkerProfile = ({ styles }) => {
 
         {/* ********************************************* */}
 
-        <button>Submit</button>
+        <button disabled={isLoading} type="submit">
+          {isLoading ? <Spinner /> : "Submit"}
+        </button>
       </form>
     </div>
   );
