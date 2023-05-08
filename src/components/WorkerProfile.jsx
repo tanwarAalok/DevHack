@@ -74,7 +74,7 @@ const WorkerProfile = ({ styles }) => {
         category,
       });
       alert("Profile Updated !");
-      router.push("/dashboard");
+      router.push("/home");
     } catch (err) {
       alert("Something went wrong");
       console.log(err);

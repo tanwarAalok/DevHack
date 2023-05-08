@@ -31,7 +31,7 @@ const WorkerCard = ({ worker }) => {
       <button onClick={() => setModalShow(true)} className={styles.green_btn}>
         Book now
       </button>
-      <WorkerBooked show={modalShow} onHide={() => setModalShow(false)} />
+      <WorkerBooked show={modalShow} onHide={() => setModalShow(false)} workerid={worker._id} />
     </div>
   );
 }
